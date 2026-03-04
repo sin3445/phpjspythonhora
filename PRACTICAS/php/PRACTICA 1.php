@@ -30,66 +30,98 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Hora Espejo en PHP</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #74b9ff, #0984e3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
 
-        .contenedor {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            width: 320px;
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
-            text-align: center;
-        }
+    .contenedor {
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        padding: 40px;
+        border-radius: 20px;
+        width: 350px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        text-align: center;
+        color: white;
+        animation: aparecer 0.8s ease-in-out;
+    }
 
-        h2 {
-            margin-bottom: 20px;
-            color: #0984e3;
+    @keyframes aparecer {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
         }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-        label {
-            display: block;
-            margin-top: 15px;
-            text-align: left;
-        }
+    h2 {
+        margin-bottom: 25px;
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
 
-        input {
-            width: 100%;
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-        }
+    label {
+        display: block;
+        margin-top: 15px;
+        text-align: left;
+        font-size: 14px;
+        opacity: 0.9;
+    }
 
-        button {
-            margin-top: 20px;
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 6px;
-            background-color: #0984e3;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        transition: 0.3s;
+    }
 
-        button:hover {
-            background-color: #0652dd;
-        }
+    input:focus {
+        transform: scale(1.05);
+        box-shadow: 0 0 10px rgba(255,255,255,0.8);
+    }
 
-        .resultado {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #2d3436;
-            font-weight: bold;
-        }
-    </style>
+    button {
+        margin-top: 25px;
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 30px;
+        background: linear-gradient(45deg, #ff6a00, #ee0979);
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .resultado {
+        margin-top: 25px;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.2);
+        animation: aparecer 0.5s ease-in-out;
+    }
+</style>
 
 </head>
 <body>
